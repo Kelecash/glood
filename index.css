@@ -1,0 +1,90 @@
+/* Body styles - Used across entire page */
+
+body{
+    background-color: #101112;
+    padding: 0px;
+    margin: 0px;
+}
+
+h1{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+p{
+    color: white;
+}
+
+.button {
+    background-color: white;
+    height: 30px; 
+    min-width: 200px;
+    width: fit-content; /* accomodates buttons with more copy */
+    padding: 5px;
+    border-radius: 10px; 
+    display: flex; /* used flex to accomodate icons within a button */
+    flex-direction: row; 
+    justify-content: center; /* centers text and icon horizontally */
+    align-items: center; /* centers text and icon vertically */
+}
+
+.button p{
+    color: #101112;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navigation styles */
+
+nav {
+    background-color: #101112;
+    height: 85px;
+    padding: 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    height: 50px;
+    width: 143px;
+    background-image: url(../glood/images/glood-white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Hero styles */
+
+.hero-container {
+    height: 490px;
+    background-image: url(../glood/images/stadium.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.gradient {
+    position: absolute; /* everything to be placed on top of gradient must be adjusted via z-index */
+    width: 100%;
+    height: 500px;
+    background: radial-gradient(47.67% 47.67% at 50% 49.89%, rgba(0, 255, 207, 0.41) 15.1%, rgba(16, 17, 18, 0.9) 100%);
+}
+
+.foreground-image {
+    height: 360px;
+    width: 180px;
+    margin: 20px;
+    border-radius: 40px; /* conceals black rectangular background from screenshot + matches curved corners of iPhone */
+    box-shadow: 0px 4px 15px 5px rgba(0, 0, 0, 0.25);
+    z-index: 10; /* places image on top of gradient */
+}
+
+.hero-container h1 {
+    z-index: 11; /* places text on top of gradient */
+    box-shadow: 0px 4px 15px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile styles - Makes page responsive */
