@@ -120,7 +120,6 @@ nav {
 .hero-gradient { /* this element has two background images - the arrow accent and the radial gradient */
     position: absolute; /* everything to be placed on top of gradient must be adjusted via z-index */
     width: 100%;
-    max-width: 800px;
     height: 490px;
     background: url(../glood/images/accent.png), radial-gradient(47.67% 47.67% at 50% 49.89%, rgba(0, 255, 207, 0.41) 15.1%, rgba(16, 17, 18, 0.9) 100%);
     background-size: 30px 268px, cover;
