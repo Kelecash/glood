@@ -223,14 +223,16 @@ nav {
     height: 325px;
     border: 2px solid #FF2A53;
     z-index: 14;
-    background: linear-gradient(64deg, #ff2a53, #00ffcf, #ff2a53, #101112);
+   /* background: linear-gradient(64deg, #ff2a53, #00ffcf, #ff2a53, #101112);
     background-size: 800% 800%;
     -webkit-animation: gradient 6s ease infinite;
     -moz-animation: gradient 6s ease infinite;
-    animation: gradient 6s ease infinite;
+    animation: gradient 6s ease infinite;*/ 
 }
 
-@-webkit-keyframes gradient {
+/* This was an animation I did for fun, but it is distracting */
+
+/* @-webkit-keyframes gradient {
     0%{background-position:4% 0%}
     50%{background-position:97% 100%}
     100%{background-position:4% 0%}
@@ -244,7 +246,7 @@ nav {
     0%{background-position:4% 0%}
     50%{background-position:97% 100%}
     100%{background-position:4% 0%}
-}
+}*/
 
 /* Elevate section styles */
 
@@ -253,6 +255,10 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    background-image: url(../glood/images/football-gradient.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 40%;
 }
 
 .elevate-textwrap {
