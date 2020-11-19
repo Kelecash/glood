@@ -219,6 +219,8 @@ nav {
 }
 
 #placeholder-vid {
+    display: flex;
+    align-items: center;
     width: 577.78px;
     height: 325px;
     border: 2px solid #FF2A53;
@@ -247,6 +249,15 @@ nav {
     50%{background-position:97% 100%}
     100%{background-position:4% 0%}
 }*/
+
+.arrow {
+    width: 0; 
+    height: 0; 
+    border-top: 25px solid transparent;
+    border-left: 50px solid #FF2A53;
+    border-bottom: 25px solid transparent;
+    margin: auto;
+}
 
 /* Elevate section styles */
 
