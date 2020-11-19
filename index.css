@@ -174,7 +174,7 @@ nav {
 /* Win section styles */
 
 .win-container {
-    height: 550px;
+    height: fit-content;
 }
 
 .win-container h1 {
@@ -192,14 +192,14 @@ nav {
 
 .win-gradient {
     position: absolute;
-    height: 550px;
+    height: 400px; 
     width: 100%;
     background: linear-gradient(179.42deg, rgba(16, 17, 18, 0) 44.09%, #101112 76.66%, rgba(0, 255, 207, 0.1) 124.79%);
     transform: rotate(-180deg); /* same gradient as .play-gradient but flipped on x-axis */
 }
 
 .win-wrapper {
-    padding: 50px;
+    padding: 50px 50px 0px 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -267,8 +267,8 @@ nav {
 #elevate-desktopimg {
     position: absolute;
     right: 0px; /* aligns image to right */
-    height: 448px;
-    width: 420px;
+    height: 60%;
+    width: auto;
     margin-right: -50px;
     overflow: hidden;
     z-index: -10;
