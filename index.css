@@ -7,17 +7,44 @@ body{
 }
 
 h1{
+    color: #101112;
+    font-family: 'Roboto', sans-serif;
+    font-size: 85px;
+    line-height: 100px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white; /* fallback if webkit styles unavailable */
+    rotate: 90deg;
+}
+
+h2{
     color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    z-index: 15; /* keeps text from being placed behind gradients and images */
 }
 
-p{
+p, li{
+    size: 20px;
     color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    z-index: 13; /* keeps text from being placed behind gradients and images */
 }
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+b{
+    color: #00FFCF;
+}
+
+/* Component styles - for elements that may be frequently reused */
 
 .button {
-    background-color: white;
+    background-color: #101112;
+    border: 2px solid #FF2A53;
     height: 30px; 
     min-width: 200px;
     width: fit-content; /* accomodates buttons with more copy */
@@ -31,9 +58,30 @@ p{
     z-index: 9; 
 }
 
-.button p{
-    color: #101112;
-    font-family: 'Roboto', sans-serif;
+.button img {
+    padding: 15px; /* creates space between button image and text + button borders */
+    margin-left: -30px; /* moves image left, centers button text */
+    max-height: 18px;
+    max-width: 18px;
+}
+
+.button p {
+    color: #FF2A53;
+}
+
+.icon {
+    height: 40px;
+    width: 40px;
+}
+
+.social-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.social-wrapper a {
+    padding: 0px 7px; /* spacing betwewn social elements */
 }
 
 /* Navigation styles */
@@ -62,18 +110,22 @@ nav {
     background-image: url(../glood/images/stadium.jpg);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 }
 
-.gradient {
+.hero-gradient { /* this element has two background images - the arrow accent and the radial gradient */
     position: absolute; /* everything to be placed on top of gradient must be adjusted via z-index */
     width: 100%;
-    min-width: 800px;
-    height: 500px;
-    background: radial-gradient(47.67% 47.67% at 50% 49.89%, rgba(0, 255, 207, 0.41) 15.1%, rgba(16, 17, 18, 0.9) 100%);
+    max-width: 800px;
+    height: 490px;
+    background: url(../glood/images/accent.png), radial-gradient(47.67% 47.67% at 50% 49.89%, rgba(0, 255, 207, 0.41) 15.1%, rgba(16, 17, 18, 0.9) 100%);
+    background-size: 30px 268px, cover;
+    background-position: 15%, center;
+    background-repeat: repeat-y, no-repeat; 
 }
 
 .foreground-image {
@@ -81,24 +133,160 @@ nav {
     width: 180px;
     border-radius: 28px; /* conceals black rectangular background from screenshot + matches curved corners of iPhone */
     box-shadow: 0px 4px 15px 5px rgba(0, 0, 0, 0.25);
-    z-index: 10; /* places image on top of gradient */
+    z-index: 10; /* places image on top of .hero-gradient */
 }
 
-.hero-container h1 {
-    z-index: 11; /* places text on top of gradient */
+.hero-container h2 {
     box-shadow: 0px 4px 15px 5px rgba(0, 0, 0, 0.25);
 }
 
-.mobile {
-    display: none; /* hides mobile elements */
+/* Play section styles */
+
+.play-container {
+    height: 550px;
+    background-image: url(../glood/images/footballplayer.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
 }
+
+.play-gradient {
+    position: absolute;
+    height: 550px;
+    width: 100%;
+    background: linear-gradient(179.42deg, rgba(16, 17, 18, 0) 44.09%, #101112 76.66%, rgba(0, 255, 207, 0.1) 124.79%);
+}
+
+.play-textwrap {
+    position: relative;
+    max-width: 800px;
+    padding: 50px;
+    z-index: 14; /* places text on top of .play-gradient */
+}
+
+.play-container h1 {
+    transform-origin: top left;
+    transform: rotate(270deg); /* makes text vertical */
+    margin-left: -17px;
+    margin-top: 216px;
+    margin-bottom: -48px; /* changes to margin lines text with center-left border of parent element */
+}
+
+/* Win section styles */
+
+.win-container {
+    height: 550px;
+}
+
+.win-container h1 {
+    margin: 0px;
+    z-index: 16;
+}
+
+#accent { /* for accent image */
+    position: absolute;
+    right: 0px; /* aligns accent image to right */
+    z-index: 16;
+    width: 268px;
+    height: 30px;
+}
+
+.win-gradient {
+    position: absolute;
+    height: 550px;
+    width: 100%;
+    background: linear-gradient(179.42deg, rgba(16, 17, 18, 0) 44.09%, #101112 76.66%, rgba(0, 255, 207, 0.1) 124.79%);
+    transform: rotate(-180deg); /* same gradient as .play-gradient but flipped on x-axis */
+}
+
+.win-wrapper {
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.win-textwrap {
+    padding-left: 25px;
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.win-textwrap p {
+    padding: 5% 0px;
+}
+
+#placeholder-vid {
+    width: 577.78px;
+    height: 325px;
+    border: 2px solid #FF2A53;
+    z-index: 14;
+    background: linear-gradient(64deg, #ff2a53, #00ffcf, #ff2a53, #101112);
+    background-size: 800% 800%;
+    -webkit-animation: gradient 6s ease infinite;
+    -moz-animation: gradient 6s ease infinite;
+    animation: gradient 6s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+    0%{background-position:4% 0%}
+    50%{background-position:97% 100%}
+    100%{background-position:4% 0%}
+}
+@-moz-keyframes gradient {
+    0%{background-position:4% 0%}
+    50%{background-position:97% 100%}
+    100%{background-position:4% 0%}
+}
+@keyframes gradient {
+    0%{background-position:4% 0%}
+    50%{background-position:97% 100%}
+    100%{background-position:4% 0%}
+}
+
+/* Elevate section styles */
+
+.elevate-container {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.elevate-textwrap {
+    width: 50%;
+    padding: 50px;
+}
+
+.elevate-textwrap .button {
+    margin: 0px;
+}
+
+#elevate-desktopimg {
+    position: absolute;
+    right: 0px; /* aligns image to right */
+    height: 448px;
+    width: 420px;
+    margin-right: -50px;
+    overflow: hidden;
+    z-index: -10;
+}
+
+.mobile {
+    display: none; /* hides mobile elements, must remain at bottom of desktop styles */
+}
+
+
 
 /* Mobile styles - Makes page responsive */
 
 @media only screen and (max-width: 600px) {
 
     .mobile {
-        display: flex !important; 
+        display: flex; 
     }
 
     .desktop {
@@ -107,8 +295,12 @@ nav {
 
     /* Mobile page styles */
 
-    h1 {
+    h2 {
         font-size: 20px;
+    }
+
+    p, li {
+        font-size: 14px;
     }
 
     /* Mobile navigation */
@@ -121,6 +313,70 @@ nav {
 
     .hero-container {
         flex-direction: column-reverse;
+    }
+
+    /* Mobile Win Section */
+
+    .win-container {
+        height: fit-content;
+    }
+    
+    .win-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .win-wrapper h1 {
+        text-align: center;
+        margin: auto;
+        padding-bottom: 25px;
+    }
+
+    #placeholder-vid {
+        width: 100%;
+    }
+
+    .win-textwrap {
+        width: 100%;
+        padding: 25px 0px;
+        flex-direction: row-reverse;
+        text-align: left;
+    }
+
+    .win-textwrap p {
+        padding-left: 50px;
+    }
+
+    .social-wrapper {
+        flex-direction: column;
+    }
+
+    /* Mobile Elevate Section */
+
+    .elevate-container {
+        max-width: 100%;
+        padding: 0px;
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    .elevate-container h1{
+        margin: 0px;
+    }
+    
+    .elevate-textwrap {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .elevate-textwrap .button {
+        margin: auto; /** centers button **/
+    }
+
+    #elevate-mobileimg {
+        width: 600px;
+        max-width: 100%;
+        overflow: hidden;
     }
 }
 
