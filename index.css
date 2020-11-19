@@ -353,29 +353,43 @@ nav {
     /* Mobile Elevate Section */
 
     .elevate-container {
+        min-height: 550px;
         max-width: 100%;
         padding: 0px;
-        height: fit-content;
         flex-direction: column;
+        background-image: url(../glood/images/football-gradient-mobile.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-y: 262px;
     }
 
     .elevate-container h1{
         margin: 0px;
+        margin-bottom: 25px;
     }
     
     .elevate-textwrap {
         width: 100%;
         padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .elevate-textwrap p {
+        padding: 0px 50px;
     }
 
     .elevate-textwrap .button {
         margin: auto; /** centers button **/
+        margin-top: 25px;
     }
 
-    #elevate-mobileimg {
-        width: 600px;
-        max-width: 100%;
-        overflow: hidden;
+    .elevate-textwrap .button p {
+        padding: 0px; /** overrides previous mobile styling **/
     }
+
+
 }
 
